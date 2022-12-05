@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+	<application android:allowBackup="true" android:icon="@mipmap/appicon" android:roundIcon="@mipmap/appicon_round" android:supportsRtl="true">
+	
+		<activity android:name="microsoft.identity.client.BrowserTabActivity"  android:exported="true">
+			<intent-filter>
+				<action android:name="android.intent.action.VIEW" />
+				<category android:name="android.intent.category.DEFAULT" />
+				<category android:name="android.intent.category.BROWSABLE" />
+				<data android:scheme="msal35610457-7107-4d3d-a3d9-f1f7ffaaf904" android:host="auth" />
+			</intent-filter>
+		</activity>
+	
+	</application>
+	
+	<queries>
+	<package android:name="com.azure.authenticator" />
+	<package android:name="com.companyname.mauiauthapp" /> <!-- This value should be copied from the *.csproj file -->
+	<package android:name="com.microsoft.windowsintune.companyportal" />
+	</queries>
+
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<uses-permission android:name="android.permission.INTERNET" />
+</manifest>
