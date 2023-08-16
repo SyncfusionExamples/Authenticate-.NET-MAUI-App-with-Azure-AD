@@ -22,6 +22,9 @@ public class AuthService
         {
             result = await authenticationClient
                 .AcquireTokenInteractive(Constants.Scopes)
+#if ANDROID
+               .WithParentActivityOrWindow(Platform.CurrentActivity)
+#endif
                 .WithPrompt(Prompt.ForceLogin) //This is optional. If provided, on each execution, the username and the password must be entered.
                 .ExecuteAsync(cancellationToken);
             return result;
